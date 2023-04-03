@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt"
+      xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:th="https://thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <!-- bootstrap CSS  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <title>CondoVagas - Inicio</title>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-light bg-light">
+            <span class="navbar-brand mb-0 h1" style="font-weight: bold;">MyCodeBlog</span>
+        </nav>
+    </header>
+
+    <section>
+    <div class="container"  style="width: 70%;">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb" style="background-color: white; padding-left: 0px;">
+                <li class="breadcrumb-item"><a href="/vagas">Vagas</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Nova Vaga</li>
+            </ol>
+        </nav>
+        <div>
+       
+        <form  th:object="${formVagaDto}" method="POST" >
+        
+                <div  class="form-group">
+                    <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{nomeDoResponsavel}"  placeholder="nome *">
+                       <div class="invalid-feedback" th:errors="*{nomeDoResponsavel}"></div>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{numeroDoApartamento}"  placeholder="apartamento *">
+                      <div class="invalid-feedback" th:errors="*{numeroDoApartamento}"></div>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{bloco}"  placeholder="bloco"></input>
+					  <div class="invalid-feedback" th:errors="*{bloco}"></div>                
+                </div>
+
+               <div class="form-group">
+                    <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{placaDoVeiculo}"   placeholder="placa"></input>
+                	  <div class="invalid-feedback" th:errors="*{placaDoVeiculo}"></div>
+                </div>
+                
+                <div class="form-group">
+                    <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{marcaDoCarro}"  placeholder="marca do veiculo"></input>
+                	  <div class="invalid-feedback" th:errors="*{marcaDoCarro}"></div>
+                </div>
+                
+                <div class="form-group">
+                    <input type="text"  class="form-control" th:errorclass="is-invalid" th:field="*{modeloDoCarro}"   placeholder="modelo do veiculo"></input>
+                	  <div class="invalid-feedback" th:errors="*{modeloDoCarro}"></div>
+                </div>
+                
+                <div class="form-group">
+                    <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{corDoCarro}"   placeholder="cor do veiculo"></input>
+                	  <div class="invalid-feedback" th:errors="*{corDoCarro}"></div>
+                </div>
+                
+                <div class="form-group">
+                    <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{numeroDaVaga}"  placeholder="numero da vaga"></input>
+                	  <div class="invalid-feedback" th:errors="*{numeroDaVaga}"></div>
+                </div>
+                
+                <div class="form-group">
+                    <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{urlImagem}"   placeholder="url imagem"></input>
+                	  <div class="invalid-feedback" th:errors="*{urlImagem}"></div>
+                </div>
+
+                <small class="form-text text-muted">(*) Campos obrigatórios</small>
+
+                <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Publicar</button>
+                <a href="/vagas" class="btn btn-light" role="button" style="margin-top: 10px;">Cancelar</a>
+                <!--<button type="submit" class="btn" style="margin-top: 10px;">Cancelar</button>-->
+            </form>
+        </div>
+    </div>
+    </section>
+
+</body>
+</html>
